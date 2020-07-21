@@ -1,11 +1,14 @@
 import express from 'express';
 
+import dealsRoutes from './routes/deals';
+
+const PORT = '3333';
+
 const api = express();
 
-api.get('/', (req, res) => {
-  return res.send('Hello LinkAPI');
-});
+api.use(express.json());
+api.use('/deals', dealsRoutes);
 
-api.listen(3000, () => {
-  console.log('API is running on PORT 3000');
+api.listen(PORT, () => {
+  console.log(`API is running on PORT ${PORT}`);
 });
