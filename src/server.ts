@@ -1,9 +1,10 @@
 import 'dotenv/config';
 import express from 'express';
 
+import './database';
 import dealsRoutes from './routes/deals';
 
-const PORT = process.env.PORT || '3333';
+const PORT = process.env.PORT || 3333;
 
 const api = express();
 
